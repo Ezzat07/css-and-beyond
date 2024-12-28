@@ -1,0 +1,215 @@
+<html>
+<head>
+
+<style>
+
+    
+/* Botton */
+.btn{
+    width:80px;
+    height: 30px;
+    border:1px solid red;
+    border-radius: 5px;
+    color:red;
+    margin-bottom:2px;
+    padding:5px 5px;
+}
+.btn:hover{
+    background-color: red;
+    color:white;
+    transition: 0.3s;
+}
+.btn-primary{
+    background-color: rgb(251, 251, 251);
+}
+.btn-block{
+    width: 100%;
+}
+.show{
+    display: block;
+}
+.menu{
+    display: none;
+}
+a:link{
+    text-decoration:none;
+    color:red;
+}
+a:visited{
+    color:red;
+}
+li.active{
+    background-color: red;
+}
+li.active a{
+    color:white;
+}
+div.navigation{
+    width:100%;
+    height: 40px;
+    border:1px solid red;
+    border-radius: 4px;
+}
+div.navigation ul{
+    width: auto;
+    margin:0;
+    padding:0;
+    list-style-type:none;
+}
+div.navigation ul li:hover{
+    background-color: red;
+    transition:0.3s;
+}
+div.navigation ul li:hover a{
+    color:white;
+} 
+div.navigation ul li:first-child{
+    border-left:none;
+}
+div.navigation ul li{
+    display:block;
+    width:80px;
+    height: 25px;
+    border-left: 1px solid rgb(252, 0, 0);
+    text-align:center;
+    padding:5px 5px; 
+    padding-top:10px;
+    color:red;
+    transition:0.3s;
+}
+li.left{
+    float:left;
+}
+/*Responsive Menu*/
+@media screen and (max-width:732px){
+
+    div.navigation{
+        width: 100%;
+    }
+
+    div.navigation ul li{
+        float: none;
+        display: block;
+        width: auto;
+        border:0;
+        border-radius: 3px;
+    }
+    div.navigation ul li.dropdown{
+        float: none;
+        display: block;
+        width: auto;
+    }
+    li.dropdown div.dropdown-content{
+        width: 100%;
+        border:0;
+    }
+    div.navigation ul li.dropdown div.dropdown-content ul li{
+        width:auto;
+        border-radius: 5px;
+    }
+    div.navigation ul li.dropdown div.dropdown-content ul li:hover{
+        width:auto;
+    }
+
+    .menu{
+        display: block;
+    }
+
+    .hide{
+        display: none;
+    }
+}
+
+div.navigation li.dropdown{
+    float:right;
+    position: relative;
+}
+.dropdown-content{
+    border:1px solid red;
+    margin-top:11px;
+    position:absolute;
+    width:200px;
+    right:0;
+    height: auto;
+    border-top:0;
+    display: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.dropdown-content ul{
+    padding:0;
+    margin:0;
+}
+div.navigation li.dropdown .dropdown-content ul li{
+    display: block;
+    border:0;
+    width:200px;
+    text-align: left;
+    padding:12px 15px;
+    transition:0.3s;
+}
+div.navigation li.dropdown .dropdown-content ul li:hover{
+    background-color: red;
+    color:white;
+    width:170px;
+    transition:0.3s;
+}
+li.dropdown:hover div.dropdown-content{
+    display: block;
+}
+li.dropdown:hover div.dropdown-content ul li{
+    width: auto;;
+}
+
+
+
+</style>
+</head>
+<body>
+
+<button class="btn btn-primary btn-block menu" id="toggle">|||</button>
+
+<div class="navigation hide">
+    <ul>
+        <li class="left active"><a href="#">Home</a></li>
+        <li class="left"><a href="#">Services</a></li>
+        <li class="left"><a href="#">About Us</a></li>
+        <li class="left"><a href="#">Contact Us</a></li>
+        <li class="left"><a href="#">News</a></li>
+        <!-- Drop Down -->
+        <li class="dropdown">
+            <a href="#">Options</a>
+            <div class="dropdown-content">
+                <ul>
+                    <li>Login</li>
+                    <li>Register</li>
+                    <li>Logout</li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</li>
+</div>
+
+
+<script>
+
+    
+    var btn = document.getElementById("toggle");
+    var nav = document.getElementsByClassName("navigation")[0];
+   
+    btn.addEventListener("click", function () {
+        if (nav.classList.contains("show")) {
+            nav.classList.remove("show");
+            nav.classList.add("hide");
+        } else {
+            nav.classList.remove("hide");
+            nav.classList.add("show");
+        }
+    });
+   
+
+</script>
+
+</body>
+</html>
