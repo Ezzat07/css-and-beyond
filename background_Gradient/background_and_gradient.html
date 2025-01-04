@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        display: grid;
+        place-items: center;
+        height: 100%;
+        background: #000;
+      }
+
+      .text {
+        font-size: 80px;
+        font-weight: 800;
+        text-transform: uppercase;
+        background: linear-gradient(
+          to right,
+          #800080 0%,
+          #2268ff 25%,
+          #f66e48 50%,
+          #2268ff 75%,
+          #800080 100%
+        );
+        background-size: 400%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: animate 10s linear infinite;
+        outline: none;
+      }
+      @keyframes animate {
+        100% {
+          background-position: 400%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Background [background-size, background-position, background]-->
+    <!-- Linear Gradient [color gradient] -->
+
+    <div contenteditable="true" class="text">Gradient</div>
+  </body>
+</html>
