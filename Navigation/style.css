@@ -107,10 +107,7 @@ a:visited {
   .nav-link:hover {
     box-shadow: none;
   }
-  .active {
-    box-shadow: none;
-  }
-  .active:hover {
+  div.active {
     box-shadow: none;
   }
 }
